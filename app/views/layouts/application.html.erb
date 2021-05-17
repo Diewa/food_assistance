@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GoCoffee</title>
+    <title>Food Assistance</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +11,16 @@
   </head>
 
   <body>
-  <div>
-    <span> TEEEST </span>
-  </div>
-    <%= yield %>
+    <div class="navbar">
+      <a href="/">Aktualny tydzien</a>
+      <a href="#contact">Zaplanuj menu</a>
+      <a href="#contact">Lista posiłków</a>
+      <a href="#contact">Nowy posiłek</a>
+      <a href="/menu/new">Lista Zakupów</a>
+    </div>
+
+    <div class="yield-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

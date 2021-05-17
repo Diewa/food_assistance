@@ -1,4 +1,4 @@
-class MenuController < ActionController::Base
+class MenuController < ApplicationController
 
   def index
     @info = "test"
