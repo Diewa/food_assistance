@@ -1,0 +1,49 @@
+<% unless @meal.errors.empty? %>
+  <div class="alert alert-error">
+
+    <ul>
+      <% @meal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+<div class="well">
+  <%= simple_form_for @meal do |f| %>
+    <div>
+      <div>
+        <%= f.label :name %>
+      </div>
+      <div>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+
+
+    <table class='table'>
+      <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>quantity</th>
+      </tr>
+      </thead>
+      <tbody class='fields'>
+      <%= f.simple_fields_for :products do |builder| %>
+        <%= render 'product', f: builder %>
+      <% end %>
+      </tbody>
+    </table>
+
+    <div class="form-actions">
+      <div>
+        <%= link_to_add_row('Add product', f, :products, class: 'btn btn-primary') %>
+      </div>
+      <div>
+        <%= f.button :submit %>
+      </div>
+    </div>
+  <% end %>
+</div>

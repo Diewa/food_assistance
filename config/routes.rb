@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   resources :menu, only: [
       :index, :new
   ]
+
+  resources :meals, only: [
+      :new, :create
+  ]
+
+  controller :meals do
+    post 'add_product' => :add_product
+  end
   # controller :menu do
   #   get '/' => :index
   #   get '/new' => :new
