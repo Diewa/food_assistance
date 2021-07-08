@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -15,7 +15,7 @@
       <a href="/">Aktualny tydzien</a>
       <a href="#contact">Zaplanuj menu</a>
       <a href="#contact">Lista posiłków</a>
-      <a href="#contact">Nowy posiłek</a>
+      <%= link_to "Nowy Posiłek", new_meal_path %>
       <a href="/menu/new">Lista Zakupów</a>
     </div>
 
